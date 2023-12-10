@@ -1,0 +1,115 @@
+/* Imported Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global CSS */
+* {
+     margin: 0%;
+     padding: 0%;
+     box-sizing: border-box;
+     font-family: 'Montserrat', sans-serif;
+}
+
+html,
+body {
+     height: 100%;
+     width: 100%;
+}
+
+body {
+     background: url(./images/pxfuel.jpg);
+     background-position: top;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: absolute;
+}
+
+main {
+     position: relative;
+     overflow: hidden;
+     height: 87vh;
+}
+
+main .container{     
+     background: rgba(255, 255, 255, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+navbar {
+     background: rgba(255, 255, 255, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+     backdrop-filter: blur(4px);
+     -webkit-backdrop-filter: blur(4px);
+     border-radius: 10px;
+     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+footer {
+     background: rgba(39, 39, 39, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(0, 0, 0, 0.18);
+}
+footer a{
+     font-size: 10px;
+}
+
+ .current-weather {
+     background-color: #ffffff90;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     height: 100%;
+ }
+ 
+ .cityName {
+     margin-top: 20px;
+     margin-bottom: 10px;
+ }
+  
+ .weather-icon img {
+     max-width: 200px;
+     max-height: auto;
+ }
+ 
+/* Add these styles to your existing CSS */
+
+.seven-day-forecast {
+     background-color: #ffffff90;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     height: 100%;
+ }
+ 
+ .seven-day-forecast h2 {
+     margin-bottom: 10px;
+     color: #000000;
+ }
+ 
+ .nav-tabs {
+     margin-bottom: 15px;
+ }
+
+ .nav-link{
+     color: #000000;
+ }
+ 
+ .tab-pane {
+     padding: 20px;
+ }
+ 
+ .tab-pane img {
+     max-width: 80%;
+     max-height: 80%;
+ }
+ 
+ 
+
+ @media (max-width: 768px) {
+     .right-side{
+          display: none;
+     }
+ }
