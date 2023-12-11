@@ -40,17 +40,17 @@
                             <img id="current-weather-icon" src="./assets/images/icons/mist.png" alt="Weather Icon">
                         </div>
                         <div class="card-body">
-                            <div class="temperature h1 d-inline">
+                            <div class="temperature d-inline">
                                 <strong>
-                                    <span id="temperature">0</span>°C
-                                    <span id="condition" class="h5"></span>
+                                    <h1><span id="temperature"></span>°C</h1>
+                                    <span id="condition" class="span"></span>
                                 </strong>
                             </div>
                             <div class="location">
                                 <i class="fa-solid fa-location-crosshairs h5"></i> &nbsp;
                                 <span id="city" class="h4">City Name</span>,
-                                    <span id="state" class="h6">State Name</span>,
-                                    <span id="country" class="h6">Country Name</span>
+                                <span id="state" class="h6">State Name</span>,
+                                <span id="country" class="h6">Country Name</span>
                             </div>
                             <hr>
                             <div class="weather">
@@ -58,220 +58,49 @@
                                     <span id="date"></span>,
                                     <span id="day"></span>
                                 </div>
-
                             </div>
                             <hr>
                             <div class="additional-info">
                                 <div class="wind">Wind Speed: <span id="wind">0</span> km/h</div>
                                 <div class="avgTemp">Avg Temperature: <span id="avgTemp">0</span>°C</div>
-                                <div class="avgHumidity">Avg Humidity: <span id="avgHumidity">0</span></div>
+                                <div class="avgHumidity">Avg Humidity: <span id="avgHumidity">0</span>%</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-8 right-side" style="display: none ;">
                     <div class="seven-day-forecast">
-                        <h2>7-Day Forecast</h2>
-                        <ul class="nav nav-tabs" id="forecast-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="day1-tab" data-bs-toggle="tab" href="#day1">Tomorrow</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="day2-tab" data-bs-toggle="tab" href="#day2">Tuesday</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="day3-tab" data-bs-toggle="tab" href="#day3">Wednesday</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="day4-tab" data-bs-toggle="tab" href="#day4">Thursday</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="day5-tab" data-bs-toggle="tab" href="#day5">Friday</a>
-                            </li>
-                        </ul>
+                        <h3>Detailed Information of <span id="d-city" class="h3">City Name</span></h3>
                         <div class="tab-content" id="forecast-tab-content">
-                            <div class="tab-pane fade show active" id="day1">
+                            <div class="tab-pane active">
                                 <div class="row">
-                                    <!-- Left side with details -->
                                     <div class="col-md-6">
                                         <div class="weather">
-                                            <div class="condition h6">Condition: <span></span></div>
-                                            <div class="temperature h6">Temperature: <span></span>°C</div>
+                                            <div class="d-condition h6">Condition: <span id="d-condition"></span></div>
+                                            <div class="d-temperature h6">Temperature: <span id="d-temperature"></span>°C</div>
+                                            <div class="d-feel-temperature h6">Feels Like: <span id="d-feel-temperature"></span>°C</div>
+                                            <div class="d-time h6">Local Time: <span id="d-time"></span></div>
+                                            <div class="d-Currently h6">Currently: <span id="d-Currently"></span></div>
                                         </div>
                                         <hr>
                                         <div class="additional-info">
-                                            <div class="rain">Rain Probability: <span>0</span>%</div>
-                                            <div class="wind">Wind Speed: <span>0</span> km/h</div>
-                                            <div class="avgTemp">Avg Temperature: <span>0</span>°C</div>
-                                            <div class="avgHumidity">Avg Humidity: <span>0</span></div>
-                                            <!-- Add similar entries for other information -->
-
-                                            <!-- New Data from the API -->
                                             <div class="main">
-                                                <div class="feelslike">Feels Like: <span>0</span>°C</div>
-                                                <div class="windchill">Wind Chill: <span>0</span>°C</div>
-                                                <div class="heatindex">Heat Index: <span>0</span>°C</div>
-                                                <div class="dewpoint">Dewpoint: <span>0</span>°C</div>
-                                                <div class="gust">Wind Gust: <span>0</span> km/h</div>
-                                                <div class="uv">UV Index: <span>0</span></div>
+                                                <div class="d-cloud">Cloud: <span id="d-cloud"></span>%</div>
+                                                <div class="d-windSpeed">Wind: <span id="d-windSpeed">5.4</span> km/h, N</div>
+                                                <div class="d-windDirection">Wind Direction: <span id="d-windDirection"></span></div>
+                                                <div class="d-windDegree">Wind Degree: <span id="d-windDegree"></span>°</div>
+                                                <div class="d-pressure">Pressure: <span id="d-pressure">1009</span> mb</div>
+                                                <div class="d-humidity">Humidity: <span id="d-humidity">72</span>%</div>
+                                                <div class="d-visibility">Visibility: <span id="d-visibility">10</span> km</div>
+                                                <div class="d-uvIndex">UV Index: <span id="d-uvIndex">1</span></div>
+                                                <div class="d-gustSpeed">Gust Speed: <span id="d-gustSpeed">8.1</span> km/h</div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Right side with weather icon -->
                                     <div class="col-md-6">
                                         <div class="left-icon d-flex justify-content-center align-items-center">
                                             <!-- Placeholder for Weather Icon -->
-                                            <img src="./assets/images/icons/sun-rain.png" alt="Weather Icon">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="day2">
-                                <div class="row">
-                                    <!-- Left side with details -->
-                                    <div class="col-md-6">
-                                        <div class="weather">
-                                            <div class="condition h6">Condition: <span></span></div>
-                                            <div class="temperature h6">Temperature: <span></span>°C</div>
-                                        </div>
-                                        <hr>
-                                        <div class="additional-info">
-                                            <div class="rain">Rain Probability: <span>0</span>%</div>
-                                            <div class="wind">Wind Speed: <span>0</span> km/h</div>
-                                            <div class="avgTemp">Avg Temperature: <span>0</span>°C</div>
-                                            <div class="avgHumidity">Avg Humidity: <span>0</span></div>
-                                            <!-- Add similar entries for other information -->
-
-                                            <!-- New Data from the API -->
-                                            <div class="main">
-                                                <div class="feelslike">Feels Like: <span>0</span>°C</div>
-                                                <div class="windchill">Wind Chill: <span>0</span>°C</div>
-                                                <div class="heatindex">Heat Index: <span>0</span>°C</div>
-                                                <div class="dewpoint">Dewpoint: <span>0</span>°C</div>
-                                                <div class="gust">Wind Gust: <span>0</span> km/h</div>
-                                                <div class="uv">UV Index: <span>0</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Right side with weather icon -->
-                                    <div class="col-md-6">
-                                        <div class="left-icon d-flex justify-content-center align-items-center">
-                                            <!-- Placeholder for Weather Icon -->
-                                            <img src="./assets/images/icons/sun-rain.png" alt="Weather Icon">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="day3">
-                                <div class="row">
-                                    <!-- Left side with details -->
-                                    <div class="col-md-6">
-                                        <div class="weather">
-                                            <div class="condition h6">Condition: <span></span></div>
-                                            <div class="temperature h6">Temperature: <span></span>°C</div>
-                                        </div>
-                                        <hr>
-                                        <div class="additional-info">
-                                            <div class="rain">Rain Probability: <span>0</span>%</div>
-                                            <div class="wind">Wind Speed: <span>0</span> km/h</div>
-                                            <div class="avgTemp">Avg Temperature: <span>0</span>°C</div>
-                                            <div class="avgHumidity">Avg Humidity: <span>0</span></div>
-                                            <!-- Add similar entries for other information -->
-
-                                            <!-- New Data from the API -->
-                                            <div class="main">
-                                                <div class="feelslike">Feels Like: <span>0</span>°C</div>
-                                                <div class="windchill">Wind Chill: <span>0</span>°C</div>
-                                                <div class="heatindex">Heat Index: <span>0</span>°C</div>
-                                                <div class="dewpoint">Dewpoint: <span>0</span>°C</div>
-                                                <div class="gust">Wind Gust: <span>0</span> km/h</div>
-                                                <div class="uv">UV Index: <span>0</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Right side with weather icon -->
-                                    <div class="col-md-6">
-                                        <div class="left-icon d-flex justify-content-center align-items-center">
-                                            <!-- Placeholder for Weather Icon -->
-                                            <img src="./assets/images/icons/sun-rain.png" alt="Weather Icon">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="day4">
-                                <div class="row">
-                                    <!-- Left side with details -->
-                                    <div class="col-md-6">
-                                        <div class="weather">
-                                            <div class="condition h6">Condition: <span></span></div>
-                                            <div class="temperature h6">Temperature: <span></span>°C</div>
-                                        </div>
-                                        <hr>
-                                        <div class="additional-info">
-                                            <div class="rain">Rain Probability: <span>0</span>%</div>
-                                            <div class="wind">Wind Speed: <span>0</span> km/h</div>
-                                            <div class="avgTemp">Avg Temperature: <span>0</span>°C</div>
-                                            <div class="avgHumidity">Avg Humidity: <span>0</span></div>
-                                            <!-- Add similar entries for other information -->
-
-                                            <!-- New Data from the API -->
-                                            <div class="main">
-                                                <div class="feelslike">Feels Like: <span>0</span>°C</div>
-                                                <div class="windchill">Wind Chill: <span>0</span>°C</div>
-                                                <div class="heatindex">Heat Index: <span>0</span>°C</div>
-                                                <div class="dewpoint">Dewpoint: <span>0</span>°C</div>
-                                                <div class="gust">Wind Gust: <span>0</span> km/h</div>
-                                                <div class="uv">UV Index: <span>0</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Right side with weather icon -->
-                                    <div class="col-md-6">
-                                        <div class="left-icon d-flex justify-content-center align-items-center">
-                                            <!-- Placeholder for Weather Icon -->
-                                            <img src="./assets/images/icons/sun-rain.png" alt="Weather Icon">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="day5">
-                                <div class="row">
-                                    <!-- Left side with details -->
-                                    <div class="col-md-6">
-                                        <div class="weather">
-                                            <div class="condition h6">Condition: <span></span></div>
-                                            <div class="temperature h6">Temperature: <span></span>°C</div>
-                                        </div>
-                                        <hr>
-                                        <div class="additional-info">
-                                            <div class="rain">Rain Probability: <span>0</span>%</div>
-                                            <div class="wind">Wind Speed: <span>0</span> km/h</div>
-                                            <div class="avgTemp">Avg Temperature: <span>0</span>°C</div>
-                                            <div class="avgHumidity">Avg Humidity: <span>0</span></div>
-                                            <!-- Add similar entries for other information -->
-
-                                            <!-- New Data from the API -->
-                                            <div class="main">
-                                                <div class="feelslike">Feels Like: <span>0</span>°C</div>
-                                                <div class="windchill">Wind Chill: <span>0</span>°C</div>
-                                                <div class="heatindex">Heat Index: <span>0</span>°C</div>
-                                                <div class="dewpoint">Dewpoint: <span>0</span>°C</div>
-                                                <div class="gust">Wind Gust: <span>0</span> km/h</div>
-                                                <div class="uv">UV Index: <span>0</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Right side with weather icon -->
-                                    <div class="col-md-6">
-                                        <div class="left-icon d-flex justify-content-center align-items-center">
-                                            <!-- Placeholder for Weather Icon -->
-                                            <img src="./assets/images/icons/sun-rain.png" alt="Weather Icon">
+                                            <img id="weather-icon" src="./assets/images/icons/mist.png" alt="Weather Icon">
                                         </div>
                                     </div>
                                 </div>

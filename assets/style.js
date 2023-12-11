@@ -55,10 +55,39 @@ function fetchWeatherData() {
             document.getElementById('wind').innerText = data.current.wind_kph;
             document.getElementById('avgTemp').innerText = data.current.feelslike_c;
             document.getElementById('avgHumidity').innerText = data.current.humidity;
+            
+            document.getElementById('d-city').innerText = data.location.name;
+            document.getElementById("d-condition").innerText = data.current.condition.text;
+            document.getElementById("d-temperature").innerText = data.current.temp_c;
+            document.getElementById("d-feel-temperature").innerText = data.current.feelslike_c;
+            document.getElementById('d-time').innerText = data.location.localtime;
+            document.getElementById("d-pressure").innerText = data.current.pressure_mb;
+            document.getElementById("d-humidity").innerText = data.current.humidity;
+            document.getElementById("d-visibility").innerText = data.current.vis_km;
+            document.getElementById("d-windSpeed").innerText = data.current.wind_kph;
+            document.getElementById("d-windDegree").innerText = data.current.wind_kph;
+            document.getElementById("d-windDirection").innerText = data.current.wind_dir;
+            document.getElementById("d-uvIndex").innerText = data.current.uv;
+            document.getElementById("d-gustSpeed").innerText = data.current.gust_kph;
+            if(data.current.is_day == 1){
+                document.getElementById("d-Currently").innerText = 'Day';
+            }
+            else{
+                document.getElementById("d-Currently").innerText = 'Night';
+            }
+            if(data.current.cloud >= 1){
+                document.getElementById("d-cloud").innerText = 'Yes,'+ ' ' + data.current.cloud;
+            }
+            else{
+                document.getElementById("d-cloud").innerText = 'No';
+            }
 
             // Update the weather icon based on the condition
             const image = document.getElementById('current-weather-icon');
             updateWeatherIcon(image, data.current.condition.text);
+
+            const icon = document.getElementById('weather-icon');
+            updateWeatherIcon(icon, data.current.condition.text);
 
             // Show the left and right columns
             const leftSide = document.querySelector('.left-side');
@@ -85,6 +114,9 @@ function updateWeatherIcon(imageElement, condition) {
             imageElement.src = './assets/images/weather-icons/clear.png';
             break;
 
+        case 'Patchy rain possible':
+            imageElement.src = './assets/images/icons/rain3.png';
+            break;
         case 'Rain':
             imageElement.src = './assets/images/weather-icons/rain.png';
             break;
